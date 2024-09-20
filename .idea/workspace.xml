@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="043337af-eec1-4728-9300-1d5e5b8c37f0" name="Changes" comment="landing page">
-      <change afterPath="$PROJECT_DIR$/components/home/pip-button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/HeroImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/nextjs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ollama.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/python.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/sklearn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tensorflow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/site-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/site-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/site.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/site.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726759244953</updated>
-      <workItem from="1726759246891" duration="10975000" />
+      <workItem from="1726759246891" duration="12177000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <option name="closed" value="true" />
@@ -88,7 +69,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726763244238</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="landing page">
+      <option name="closed" value="true" />
+      <created>1726819697270</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726819697270</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
