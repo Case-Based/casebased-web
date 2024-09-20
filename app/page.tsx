@@ -13,6 +13,7 @@ import ollama from "public/ollama.png"
 import python from "public/python.png"
 import tensorflow from "public/tensorflow.png"
 import sklearn from "public/sklearn.png"
+import {Features} from "@/app/features";
 
 interface Card {
   title: string
@@ -51,8 +52,8 @@ const cards: Card[] = [
 export default function IndexPage() {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10 overflow-x-clip">
-      <div className={"w-4/5 mx-auto "}>
-        <div className="flex w-1/2 flex-col items-start gap-2 mt-20">
+      <div className={"w-full md:w-4/5 mx-auto "}>
+        <div className="flex w-full md:w-2/3 xl:w-1/2 flex-col items-start gap-2 mt-20">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl">
             AI-guided decisions <br className="hidden sm:inline"/>
             made transparent.
@@ -63,14 +64,14 @@ export default function IndexPage() {
             className={"underline decoration-2 font-bold"}>start now.</span>
           </p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 mb-12">
           <PipButton/>
         </div>
-        <div className={"w-full"}>
+        <div className={"w-full mb-12"}>
           <Image alt={"Hero Image showing the casebased workflow"} src={heroImage} className={"w-full max-w-screen mt-20"}
                  fill={false}/>
         </div>
-        <div className="flex w-1/2 flex-col items-start gap-2 mt-20 mb-12">
+        <div className="flex w-full md:w-2/3 xl:w-1/2 flex-col items-start gap-2 mt-20 mb-12">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl">
             Integrating great tools...
           </h1>
@@ -84,22 +85,26 @@ export default function IndexPage() {
           cards.map((card: Card) => <Card logo={card.logo} title={card.title} text={card.text} key={card.title}/>)
         }
       </div>
-      <div className={"w-4/5 mx-auto "}>
-        <div className="flex w-2/3 flex-col items-start gap-2 mt-20" id={"features"}>
+      <div className={"w-full md:w-4/5 mx-auto"}>
+        <div className="flex w-full md:w-2/3 xl:w-1/2 flex-col items-start gap-2 mt-20 mb-8" id={"features"}>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl">
-            To help you make decisions
+            To help you make right decisions
           </h1>
-          <p className="max-w-[700px] text-lg text-muted-foreground mb-8 w-3/4">
-            CaseBased offers not only a library for ML and Data Science but a fully fledged tool that integrates AI into your decision making workflow.
+          <p className="text-lg text-muted-foreground">
+            CaseBased offers not only a library for ML and Data Science but a fully fledged tool that integrates AI into
+            your decision making workflow.
           </p>
+        </div>
+        <div className={"w-full"}>
+          <Features />
         </div>
       </div>
     </section>
-)
+  )
 }
 const Card = (card: Card) => {
   return (
-    <div className={"w-60 min-w-60 min-h-80 bg-gray-200 h-80 rounded-xl border border-1 border-gray-300 p-7 flex flex-col snap-start"}>
+    <div className={"w-60 min-w-60 min-h-80 bg-card h-80 rounded-xl border border-1 border-border p-7 flex flex-col snap-start"}>
       <Image className={"h-14 w-fit mx-auto my-10"} fill={false} src={card.logo} alt={""}/>
       <div className={"text-xl font-bold text-card-foreground"}>
         {card.title}

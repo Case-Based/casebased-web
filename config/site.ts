@@ -18,8 +18,8 @@ export const siteConfig = {
       href: "/docs"
     },
     {
-      title: "Story",
-      href: "/story"
+      title: "Articles",
+      href: "/articles"
     },
   ],
   links: {
