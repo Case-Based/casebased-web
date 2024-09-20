@@ -66,7 +66,7 @@ export const Features = () => {
           <CodeField/>
         </div>
       </div>
-      <div className={"flex flex-col lg:hidden gap-6"}>
+      <div className={"w-full flex flex-col lg:hidden gap-6"}>
           {
             features.map((feature: Feature, index) =>
                 <div className={"flex flex-col gap-y-4"}>
@@ -84,12 +84,12 @@ const CodeField = () => {
   return (
     <div className={"w-full h-fit bg-card rounded-xl p-8 border-border border-1 border overflow-scroll text-nowrap"}>
       <div className={"w-full text-md font-thin font-mono selection:!text-black selection:bg-red-400/30"}>
-        <span className={"text-gray-400"}># create the casebased instance</span> <br className="hidden sm:inline"/>
-          instance = cb.<span className={"text-blue-500"}>new_instance()</span> <br className="hidden sm:inline"/>
-          <span className={"text-gray-400"}># load historical data as knowledge </span><br className="hidden sm:inline"/>
-          instance.<span className={"text-blue-500"}>add_knowledge(“historical.csv”)</span> <br className="hidden sm:inline"/>
-          <span className={"text-gray-400"}># learn the data </span><br className="hidden sm:inline"/>
-          <div>instance.<span className={"text-blue-500"}>compile() </span></div><br className="hidden sm:inline"/>
+        <span className={"text-gray-400"}># create the casebased instance</span> <br className="inline"/>
+          instance = cb.<span className={"text-blue-500"}>new_instance()</span> <br className="inline"/>
+          <span className={"text-gray-400"}># load historical data as knowledge </span><br className="inline"/>
+          instance.<span className={"text-blue-500"}>add_knowledge(“historical.csv”)</span> <br className="inline"/>
+          <span className={"text-gray-400"}># learn the data </span><br className="inline"/>
+          <div>instance.<span className={"text-blue-500"}>compile() </span></div><br className="inline"/>
         </div>
       </div>
   )
