@@ -5,6 +5,7 @@ import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import {Button} from "@/components/ui/button";
 
 interface MainNavProps {
   items?: NavItem[]
@@ -26,7 +27,7 @@ export function MainNav({ items }: MainNavProps) {
                   key={index}
                   href={item.href}
                   className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
+                    "flex items-center text-sm font-medium text-black-foreground",
                     item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >
