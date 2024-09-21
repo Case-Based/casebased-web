@@ -51,7 +51,7 @@ const cards: Card[] = [
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10 overflow-x-clip">
+    <section className="container mx-auto grid items-center py-8 gap-6 overflow-x-clip" id={"/"}>
       <div className={"w-full md:w-4/5 mx-auto"}>
         <div className="flex w-full md:w-2/3 xl:w-1/2 flex-col items-start gap-2 mt-20">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl">
@@ -68,7 +68,8 @@ export default function IndexPage() {
           <PipButton/>
         </div>
         <div className={"w-full mb-12"}>
-          <Image alt={"Hero Image showing the casebased workflow"} src={heroImage} className={"w-full max-w-screen mt-20"}
+          <Image alt={"Hero Image showing the casebased workflow"} src={heroImage}
+                 className={"w-full max-w-screen mt-20"}
                  fill={false}/>
         </div>
         <div className="flex w-full md:w-2/3 xl:w-1/2 flex-col items-start gap-2 mt-20 mb-12">
@@ -76,7 +77,8 @@ export default function IndexPage() {
             Integrating great tools...
           </h1>
           <p className="max-w-[700px] text-lg text-muted-foreground">
-            Seamlessly integrated tooling, all local and free. Giving you performance and security for your case-based reasoning.
+            Seamlessly integrated tooling, all local and free. Giving you performance and security for your case-based
+            reasoning.
           </p>
         </div>
       </div>
@@ -95,9 +97,9 @@ export default function IndexPage() {
             your decision making workflow.
           </p>
         </div>
-        <div className={"w-full"}>
-          <Features />
-        </div>
+      </div>
+      <div className={"w-full md:w-4/5 mx-auto"}>
+        <Features/>
       </div>
     </section>
   )

@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig
 export const siteConfig = {
   name: "CaseBased",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "AI guided decisions made transparent. CaseBased is a hybrid system of case-based reasoning and artificial neural networks.",
   mainNav: [
     {
       title: "Home",
@@ -11,7 +11,7 @@ export const siteConfig = {
     },
     {
       title: "Features",
-      href: "#features"
+      href: "/#features"
     },
     {
       title: "Docs",
@@ -23,8 +23,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
+    twitter: "",
+    github: "https://github.com/lukasklockenhoff/casebased",
     dashboard: "/dashboard",
   },
 }

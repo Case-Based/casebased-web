@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react"
 import Link from "next/link"
 
@@ -20,8 +22,9 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import {
+  Box,
   Cloud, CreditCard,
-  Github,
+  Github, HelpCircle, Home,
   Keyboard,
   LifeBuoy,
   LogOut,
@@ -32,6 +35,7 @@ import {
   UserPlus,
   Users
 } from "lucide-react";
+import {usePathname} from "next/navigation";
 
 interface MainNavProps {
   items?: NavItem[]
@@ -64,91 +68,55 @@ export function MainNav({ items }: MainNavProps) {
 }
 
 export function MobileNav({ items }: MainNavProps) {
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    element?.scrollIntoView({ behavior: "smooth"});
+  };
+
+  const currentPath = usePathname()
+
+  const MobileNavIcon = ({title}: {title: string}) => {
+    switch (title) {
+      case "Home":
+        return <Home className={"mr-2 h-4 w-4"} />
+      case "Dashboard":
+        return <PlusCircle className={"mr-2 h-4 w-4"} />
+      case "Articles":
+        return <MessageSquare className={"mr-2 h-4 w-4"} />
+      case "Features":
+        return <Box className={"mr-2 h-4 w-4"} />
+      case "Docs":
+        return <LifeBuoy className={"mr-2 h-4 w-4"} />
+      case "Contact":
+        return <Mail className={"mr-2 h-4 w-4"} />
+      default:
+        return <HelpCircle className={"mr-2 h-4 w-4"} />
+    }
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size={"icon"}><Menu /></Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <span>Profile</span>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard className="mr-2 h-4 w-4" />
-            <span>Billing</span>
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Settings className="mr-2 h-4 w-4" />
-            <span>Settings</span>
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Keyboard className="mr-2 h-4 w-4" />
-            <span>Keyboard shortcuts</span>
-            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Users className="mr-2 h-4 w-4" />
-            <span>Team</span>
-          </DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>
-              <UserPlus className="mr-2 h-4 w-4" />
-              <span>Invite users</span>
-            </DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>
-                  <Mail className="mr-2 h-4 w-4" />
-                  <span>Email</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <MessageSquare className="mr-2 h-4 w-4" />
-                  <span>Message</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <PlusCircle className="mr-2 h-4 w-4" />
-                  <span>More...</span>
-                </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
-          <DropdownMenuItem>
-            <Plus className="mr-2 h-4 w-4" />
-            <span>New Team</span>
-            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <Github className="mr-2 h-4 w-4" />
-          <span>GitHub</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <LifeBuoy className="mr-2 h-4 w-4" />
-          <span>Support</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem disabled>
-          <Cloud className="mr-2 h-4 w-4" />
-          <span>API</span>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
-          <span>Log out</span>
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
+      {items?.length ? (
+        <DropdownMenuContent className="w-56">
+          <DropdownMenuGroup>
+            {
+              items?.map(
+                (item, index) =>
+                  item.href && (
+                    <DropdownMenuItem>
+                      <MobileNavIcon title={item.title}/>
+                       <Link onClick={() => scrollToSection(item.href?.startsWith("/#")? item.title.toLowerCase() : "")} href={item.href} key={index}>{item.title}</Link>
+                    </DropdownMenuItem>
+                  )
+              )
+            }
+          </DropdownMenuGroup>
+        </DropdownMenuContent>
+      ) : null}
     </DropdownMenu>
   )
 }
