@@ -43,7 +43,7 @@ const CodeField = () => {
           <div className={"inline"}>def  <span className={"text-red-400"}>hello_world():</span></div>
           {'\n'}
           {'\t'}
-          <div className={"inline"}>print(<span className={"text-green-800"}>"Hello World!"</span>)</div>{'\n'}
+          <div className={"inline"}>print(<span className={"text-green-800"}>&quot;Hello World!&quot;</span>)</div>{'\n'}
         </div>
       </div>
     </div>
